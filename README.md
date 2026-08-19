@@ -1,11 +1,11 @@
-# NInfer
+# NInfer-windows
 
 > Selected checkpoints. Maximum single-GPU inference performance.
 
 NInfer is a from-scratch C++/CUDA inference engine for explicitly registered Qwen checkpoints on a
 single NVIDIA GeForce RTX 5090. It runs text, image, and video prompts through a local CLI or
-OpenAI-/Anthropic-compatible HTTP APIs. It builds and runs natively on 64-bit Linux and
-Windows 11 x64.
+OpenAI-/Anthropic-compatible HTTP APIs. It builds and runs natively on Windows 11 x64. Fork changes
+should also build/run on 64-bit Linux but nothing has been tested.
 
 NInfer deliberately supports a closed set of model artifacts instead of acting as a general model
 runtime:
@@ -144,9 +144,10 @@ enabled, MTP=3, and EvalScope 1.9.0 (0-shot, rule scoring, one sample per proble
 | [Qwen3.6-27B groupwise-int](model-cards/Qwen3.6-27B-NInfer/README.md) | 86.67% | 93.33% | 86.87% |
 | [Qwen3.6-27B NVFP4](model-cards/Qwen3.6-27B-nvfp4-NInfer/README.md) | 93.33% | 93.33% | 84.34% |
 | [Qwen3.6-35B-A3B groupwise-int](model-cards/Qwen3.6-35B-A3B-NInfer/README.md) | 90.00% | 90.00% | 85.35% |
+| [Qwen3.8-27B NVFP4](model-cards/Qwen3.8-27B-nvfp4-NInfer/README.md) | — | — | 88.38% |
 
-Both Qwen3.8-27B profiles are supported but have not yet been added to this published evaluation
-campaign.
+The Qwen3.8-27B groupwise-int profile has not yet been added to this published evaluation campaign;
+the Qwen3.8-27B NVFP4 profile currently reports GPQA-Diamond only.
 
 These are single-sample results under that NInfer evaluation profile, not pass@k. See the model
 cards and [full performance document](docs/performance.md) for correct/total counts and evaluation
